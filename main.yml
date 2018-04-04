@@ -1,0 +1,10 @@
+---
+hosts: web
+become: true
+tasks:
+  - name: Update the cache
+    apt: update_cache=yes
+  - name: Installing pip
+    apt: name=python-pip state=present
+  - name: Installing awscli via pip
+    pip: name=awscli state=present
