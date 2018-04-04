@@ -1,7 +1,9 @@
 ---
-hosts: web
-become: true
-tasks:
+
+- name: Install awscli
+  hosts: nodes
+  become: true
+  tasks:
   - name: Update the cache
     apt: update_cache=yes
   - name: Installing pip
